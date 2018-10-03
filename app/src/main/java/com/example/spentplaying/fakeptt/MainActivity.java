@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             String nickname = cursor.getString(2);
             String title = cursor.getString(3);
             String content = cursor.getString(4);
-            Log.d("QQ",name+" "+content);
             postArrayList.add(new Post(name,nickname,title,content));
             cursor.moveToNext();
         }
@@ -68,9 +68,10 @@ public class MainActivity extends AppCompatActivity {
         btn_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adapter.updatePostArrayLiset(postArrayList);
+                adapter.updatePostArrayList(postArrayList);
             }
         });
+
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode==POST){
