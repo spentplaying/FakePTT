@@ -8,26 +8,34 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_log"
+        android:layout_toLeftOf="@+id/btn_log"
         android:layout_centerHorizontal="true"
         android:text="Settings"
-        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignBottom="@id/btn_log"
         android:id="@+id/btn_setting"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Log"
+        android:layout_centerHorizontal="true"
+        android:text="Refresh"
+        android:layout_marginTop="15dp"
         android:id="@+id/btn_log"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btn_log"
+        android:layout_toRightOf="@+id/btn_log"
         android:text="Post"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignBottom="@id/btn_log"
         android:id="@+id/btn_post"
         />
+    <ListView
+        android:layout_below="@id/btn_log"
+        android:layout_width="match_parent"
+        android:id="@+id/lsview"
+        android:layout_height="match_parent"></ListView>
 </RelativeLayout>

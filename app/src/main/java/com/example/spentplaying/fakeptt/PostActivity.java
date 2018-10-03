@@ -39,13 +39,17 @@ public class PostActivity extends AppCompatActivity {
                 SharedPreferences settings = getSharedPreferences("NAME",MODE_PRIVATE);
                 String f_name = settings.getString("f_name","");
                 String l_name = settings.getString("l_name","");
+                String nickname = settings.getString("nickname","");
                 String name = f_name + " " + l_name ;
                 ContentValues values = new ContentValues();
+                resultIntent.putExtra("nickname",nickname);
+                resultIntent.putExtra("content",content);
                 // Read the data  and save it in SQLite
                 PostOpenHelper mDBhelper = new PostOpenHelper(PostActivity.this);
                 SQLiteDatabase db = mDBhelper.getWritableDatabase();
                 values.put(PostContract.Post.COLUMN_NAME_USER,name);
                 values.put(PostContract.Post.COLUMN_NAME_TITLE,title);
+                values.put(PostContract.Post.COLUMN_NAME_NICK_NAME,nickname);
                 values.put(PostContract.Post.COLUMN_NAME_CONTENT,content);
                 db.insert(
                         PostContract.Post.TABLE_NAME,

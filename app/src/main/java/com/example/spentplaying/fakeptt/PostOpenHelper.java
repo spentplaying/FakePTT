@@ -14,11 +14,12 @@ public class PostOpenHelper extends SQLiteOpenHelper{
             "CREATE TABLE IF NOT EXISTS " + PostContract.Post.TABLE_NAME + "(" +
                     PostContract.Post._ID +" INTEGER PRIMARY KEY," +
                     PostContract.Post.COLUMN_NAME_USER + TEXT_TYPE + COMMA_SEP +
+                    PostContract.Post.COLUMN_NAME_NICK_NAME + TEXT_TYPE + COMMA_SEP +
                     PostContract.Post.COLUMN_NAME_TITLE + TEXT_TYPE + COMMA_SEP +
                     PostContract.Post.COLUMN_NAME_CONTENT + TEXT_TYPE  +" )";
     private static final String POST_TABLE_DELETE =
             "DROP TABLE IF EXISTS "+ PostContract.Post.TABLE_NAME;
-    private static  final  int DATABASE_VERSION = 1;
+    private static  final  int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "post.db";
     PostOpenHelper(Context context){
         super(context, DATABASE_NAME,null, DATABASE_VERSION);

@@ -8,6 +8,7 @@ public final class PostContract {
         private Post(){};
         public static final String TABLE_NAME = "post";
         public static final String COLUMN_NAME_USER = "username";
+        public static final String COLUMN_NAME_NICK_NAME = "nickname";
         public static final String COLUMN_NAME_TITLE = "title";
         public static final String COLUMN_NAME_CONTENT = "content";
     }
